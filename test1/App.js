@@ -1,22 +1,35 @@
 import React from "react";
-import {Alert, SafeAreaView, View} from "react-native";
-import ImagePrep from './components/ImagePrep';
-import Separator from './components/Separator';
+import {SafeAreaView, StyleSheet, Text} from "react-native";
 import {Styles} from './components/Styles';
-import {HomeClick} from './common/Home';
-import {GOClick} from './common/GO';
+import {useDeviceOrientation} from "@react-native-community/hooks";
+import WelcomeScreen from "./components/WelcomeScreen";
+import FetchLocation from "./components/fetchLocation";
+
 
 export default function App() {
+    // console.log(useDimensions(), useDeviceOrientation());
+    const {landscape} = useDeviceOrientation();
+
+    const viewAdjustments = StyleSheet.create({
+        adjust: {
+            width: '100%',
+            height: landscape ? '100%' : '100%'
+        }
+    })
+
+    const getUserLocation=()=>{
+        navigator.geolocation.getCurrentPosition(position=>{
+            console.log(position)
+        },err=>{
+            console.err(err)
+        })
+    }
+
     return (
-        <SafeAreaView style={Styles.container}>
-            <View>
-                <ImagePrep obj={require('./assets/dp.png')} imgClick={() => {
-                }}  title={'Hello DP, the web developer'}  btnTitle={'Home'} btnClick={HomeClick}/>
-            </View>
-            <Separator/>
-            <View>
-                <ImagePrep obj={{uri: "https://picsum.photos/200/300", width: 200, height: 200}} imgClick={() => Alert.alert('image on click trigger')} title={'looks good'} btnTitle={'Go'} btnClick={GOClick}/>
-            </View>
+        <SafeAreaView style={[Styles.safeContainer, viewAdjustments.adjust]}>
+            <Text style={Styles.mainTitle}>Welcome DP's APP</Text>
+            <FetchLocation onGetLocation={getUserLocation}/>
+            <WelcomeScreen/>
         </SafeAreaView>
     );
 }

@@ -6,3 +6,11 @@ export const GOClick=()=>{
         ,{text:'Cancel',onPress:()=>Alert.alert('Cancel is clicked')}
     ])
 }
+
+
+export const GOImageClick=()=>{
+    Alert.alert('Go Image','This is the image',[
+        {text:'Ok',onPress:()=>Alert.alert('OK is clicked')}
+        ,{text:'Cancel',onPress:()=>Alert.alert('Cancel is clicked')}
+    ])
+}
