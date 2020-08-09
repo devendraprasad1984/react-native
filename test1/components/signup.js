@@ -10,10 +10,13 @@ function SignUp({navigation}) {
                 <Text>signup Goes here</Text>
             </View>
 
-            <View style={[Styles.bottom, Styles.row]}>
+            <View style={[Styles.rowBottom, Styles.opac]}>
                 <Button title={enums.HOME.name}
+                        color={enums.navy}
                         onPress={() => navigation.navigate(enums.HOME.name.toString(), {name: 'home'})}/>
-                <Button style={Styles.bgpurple} title={enums.LOGIN.name}
+
+                <Button title={enums.LOGIN.name}
+                        color={enums.magenta}
                         onPress={() => navigation.navigate(enums.LOGIN.name.toString(), {name: 'back'})}/>
             </View>
         </View>

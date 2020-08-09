@@ -28,10 +28,10 @@ export const Styles = StyleSheet.create({
         bottom: 0
     },
     btnFill: {
-        width:'100%',
+        width: '100%',
         flexDirection: 'column'
     },
-    row: {
+    rowBottom: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',

@@ -1,21 +1,26 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, ScrollView} from 'react-native';
 import {enums} from "../common/enums";
 import {Styles} from "./Styles";
 
 function Login({navigation}) {
     return (
         <View style={[Styles.view]}>
-            <View style={{flex: 1, height:90}}>
-                <Text>Login Goes here</Text>
-            </View>
-            <View style={[{flex: 1, height:10}, Styles.bottom, Styles.row]}>
-                <Button title={enums.SUBMIT.title} onPress={() => {
+            <ScrollView>
+                <View style={{flex: 5}}>
+                    <Text>Login Goes here</Text>
+                </View>
+            </ScrollView>
+            <View style={[Styles.rowBottom, Styles.opac]}>
+                <Button title={enums.LOGIN.name} onPress={() => {
                 }}/>
-                <Button style={[Styles.bgred, Styles.opac]} title={enums.RESET.title} onPress={() => {
+                <Button color={enums.red}
+                        title={enums.RESET.name} onPress={() => {
                 }}/>
-                <Button title={enums.HOME.name}
-                        onPress={() => navigation.navigate(enums.HOME.name.toString(), {name: 'Jane'})}/>
+                <Button
+                    title={enums.HOME.name}
+                    color={enums.orange}
+                    onPress={() => navigation.navigate(enums.HOME.name.toString(), {name: 'Jane'})}/>
             </View>
         </View>
     );
