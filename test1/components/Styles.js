@@ -10,41 +10,52 @@ export const Styles = StyleSheet.create({
     opac: {
         opacity: 0.7
     }
+    , bgred: {
+        backgroundColor: '#ec7f7f',
+    }
+    , bgorange: {
+        backgroundColor: '#e37840',
+    }
+    , bgpurple: {
+        backgroundColor: '#925dde',
+    }
     , center: {
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 2,
     },
-    loginButton: {
-        width: '100%',
-        height: 70,
-        backgroundColor: '#5fa9e3',
+    bottom: {
+        bottom: 0
+    },
+    btnFill: {
+        width:'100%',
+        flexDirection: 'column'
+    },
+    row: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'flex-end',
+        marginBottom: 2
     },
     btnText: {
         fontSize: 30,
         fontWeight: 'bold',
         position: 'absolute'
     },
-    registerButton: {
-        width: '100%',
-        height: 70,
-        backgroundColor: 'seagreen'
-    },
     safeContainer: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignContent: 'center',
-        flexWrap: 'wrap',
         paddingTop: Platform.OS.toLowerCase() === 'android' ? StatusBar.currentHeight : 0
     },
     view: {
-        flexBasis: 100,
-        flexShrink: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100%'
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        alignContent: 'center',
+        paddingTop: Platform.OS.toLowerCase() === 'android' ? StatusBar.currentHeight : 0
     },
     title: {
         textAlign: 'center',

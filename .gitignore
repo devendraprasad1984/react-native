@@ -1,4 +1,4 @@
-test/node_modules/
-test/package-lock.json
-test/.idea/
-test/.vscode/
+test1/node_modules/
+test1/package-lock.json
+test1/.idea/
+test1/.vscode/
